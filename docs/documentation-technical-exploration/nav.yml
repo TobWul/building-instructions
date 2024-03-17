@@ -1,5 +1,0 @@
-nav:
-  - "Introduction": "index.mdx"
-  - "Getting Started":
-    - "Installation": "installation/index.mdx"
-    - "Configuration": "installation/configuration.mdx"

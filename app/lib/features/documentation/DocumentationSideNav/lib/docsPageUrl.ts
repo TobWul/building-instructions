@@ -1,2 +1,2 @@
 export const docsPageUrl = (docsSlug: string, slug: string) =>
-  `/docs/${docsSlug}/${slug}`;
+  `/${process.env.NEXT_PUBLIC_DOCS_FOLDER}/${docsSlug}/${slug}`;

@@ -1,13 +1,26 @@
-import { DocumentationPageItem } from "@/app/types/DocumentationPageItem";
 import { docsPageUrl } from "./lib/docsPageUrl";
 import { NavItem } from "./NavItem";
-import { css } from "@/styled-system/css";
-import { slugify } from "@/app/lib/utils/slugify";
+import { css } from "@/style/generated-styles/css";
+import { slugify } from "@/utils";
+import { NavTree } from "@/app/types/NavTree";
 
 type Props = {
-  navTree: DocumentationPageItem[];
+  navTree: NavTree;
   docsSlug: string;
   currentUrl: string;
+};
+
+const LevelWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <ul
+      className={css({
+        marginLeft: "16",
+        borderLeft: "primary",
+      })}
+    >
+      {children}
+    </ul>
+  );
 };
 
 export const RecursiveNavTreeRenderer = ({
@@ -15,30 +28,20 @@ export const RecursiveNavTreeRenderer = ({
   docsSlug,
   currentUrl,
 }: Props) => {
-  const renderNavTree = (navTree: DocumentationPageItem[]) => {
+  const renderNavTree = (navTree: NavTree) => {
     return navTree.map((item) => {
       const entries = Object.entries(item);
       return entries.map(([title, value]) => {
         const url = docsPageUrl(docsSlug, slugify(title));
         const active = currentUrl === docsPageUrl(docsSlug, slugify(title));
-
         if (typeof value === "object") {
-          // console.log("Key:", key, "Value: ", value, "Title: ", title);
           const hasChildren = Object.values(value).some(
             (v) => typeof v === "object"
           );
-
           if (hasChildren) {
             return (
               <NavItem title={title} key={title} active={active}>
-                <ul
-                  className={css({
-                    marginLeft: "16",
-                    borderLeft: "primary",
-                  })}
-                >
-                  {renderNavTree(value)}
-                </ul>
+                <LevelWrapper>{renderNavTree(value)}</LevelWrapper>
               </NavItem>
             );
           } else {
@@ -55,6 +58,5 @@ export const RecursiveNavTreeRenderer = ({
       });
     });
   };
-
   return <ul>{renderNavTree(navTree)}</ul>;
 };

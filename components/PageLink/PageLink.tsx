@@ -1,4 +1,4 @@
-import { cva } from "@/styled-system/css";
+import { cva } from "@/style/generated-styles/css";
 import Link from "next/link";
 import React from "react";
 
@@ -11,6 +11,9 @@ type Props = {
 const linkStyles = cva({
   base: {
     color: "blue.500",
+    _hover: {
+      textDecoration: "underline",
+    },
   },
 });
 

@@ -1,7 +1,5 @@
-import { slugify } from "@/app/lib/utils/slugify";
-import { css, cva } from "@/styled-system/css";
+import { cva } from "@/style/generated-styles/css";
 import Link from "next/link";
-import { docsPageUrl } from "./lib/docsPageUrl";
 
 const navItemStyles = cva({
   base: {
@@ -15,14 +13,14 @@ const navItemStyles = cva({
   variants: {
     active: {
       true: {
-        backgroundColor: "layer.1.hovered",
+        backgroundColor: "layer.2.hovered",
         color: "text.primary",
       },
     },
     clickable: {
       true: {
         _hover: {
-          background: "layer.1.hovered",
+          background: "layer.2.hovered",
           color: "text.primary",
         },
       },

@@ -1,0 +1,50 @@
+# Design tokens
+
+Design tokens play a crucial role in ensuring consistency is maintained across the UI elements of Baseplate. Imagine if every plugin developer had to decide individually what color to use for text – it would lead to a chaotic and inconsistent design experience. By acting as a single source of truth for elements like colors, typefaces, and text spacing, design tokens provide a centralized repository that streamlines decision-making, fosters cohesion, and simplifies maintenance and editing processes, all from a convenient, centralized location.
+
+Using design tokens will look something like this:
+
+```jsx title="App.tsx" highlightLines="2-4"
+<div className={css({
+    color: 'text.secondary',
+    fontFamily: 'sans',
+    textStyle: 'body1',
+    fontWeight: 'bold',
+    padding: 'lg',
+    backgroundColor: 'layer.1.default',
+    border: 'primary.default',
+    borderRadius: "md",
+    width: 'full',
+    maxWidth: 'screen.md',
+    transitionProperty: 'opacity, transform',
+    transitionDuration: 'fast',
+    transitionTimingFunction: 'easeIn',
+    '& hover': {
+        backgroundColor: 'layer.1.hovered',
+        color: 'text.primary',
+    },
+})} 
+/>
+```
+
+## How design tokens are built
+
+### Core tokens
+
+Why core tokens? Because defining colors in HEX values every time you want to use it will lead to inconsistencies. If you want to change how warm or cold the greys look, you will have to change it in every place it is used.
+
+Examples of core tokens are: `core.color.slate.100`, `core.color.red.500`, `core.dimension.lg`, `core.borderRadius.default`.
+
+These tokens don't say anything about where they should be used, and are thus rarely used directly in the code. That's what alias and component tokens are used for.
+
+### Semantic tokens (alias tokens)
+
+Why alias tokens? Setting the text color to be `gray.500` every time means if we learn that `grey.500` does not have a high enough contrast ratio when used with our background colors we would have to change it in every place it is used.
+
+The color used for backgrounds is `#F5F5F5` or `layer.1.default`. If we want to change the background color, we would have to change it in every place it is used.
+
+This is the gray color <ColorPreview color="#CECECE">gray.500</ColorPreview> that is used for text.
+
+| Color | HEX | RGB | Contrast |
+| --- | --- | --- | --- |
+| gray.100 | `#F5F5F5` | 245, 245, 245 | 4.5:1 |

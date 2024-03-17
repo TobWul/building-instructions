@@ -8,7 +8,6 @@ type Props = {
 
 export const ThemeToggle = ({}: Props) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  console.log(theme, resolvedTheme);
 
   return (
     <div>

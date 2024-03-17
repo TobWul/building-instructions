@@ -1,4 +1,4 @@
-import { css } from "@/styled-system/css";
+import { css } from "@/style/generated-styles/css";
 import React from "react";
 
 type Props = {
@@ -17,6 +17,7 @@ export const Nav = ({}: Props) => {
         width: "full",
         backgroundColor: "layer.1.default",
         textStyle: "body1",
+        zIndex: "nav",
       })}
     >
       <p>Home</p>

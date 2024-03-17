@@ -1,10 +1,11 @@
-import { cva, type RecipeVariantProps } from "@/styled-system/css";
+import { cva, type RecipeVariantProps } from "@/style/generated-styles/css";
 import React from "react";
 
 const buttonStyle = cva({
   base: {
     cursor: "pointer",
     borderRadius: "md",
+    fontWeight: "normal",
   },
   variants: {
     variant: {
@@ -28,6 +29,11 @@ const buttonStyle = cva({
       small: {
         textStyle: "body2",
         py: "2",
+        px: "4",
+      },
+      tiny: {
+        textStyle: "caption",
+        py: "1",
         px: "4",
       },
     },

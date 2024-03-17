@@ -1,1 +1,3 @@
-export type DocumentationPageItem = { [key: string]: string | NavItem[] };
+export type DocumentationPageItem = {
+  [key: string]: string | DocumentationPageItem[];
+};

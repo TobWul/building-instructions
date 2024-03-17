@@ -1,0 +1,21 @@
+nav:
+  - "Introduction": "index.mdx"
+  - "Getting Started":
+      - "Installation": "installation/index.mdx"
+      - "Configuration": "installation/configuration.mdx"
+  - "Extending markdown":
+      - "MDX components":
+          - "Built-in components":
+              - "Button": "../../components/Button/README.md"
+              - "SectionTitle": "../../components/SectionTitle/README.md"
+          - "Create a MDX component":
+              - "Design tokens": "components/design-tokens.mdx"
+      - "Remark plugins":
+          - "Built-in plugins":
+            - "Relative File Link to Page Link": "plugins/relative-file-link-to-page-link.md"
+          - "Create a plugin":
+              - "AST": "plugins/ast.mdx"
+              - "Create plugin": "plugins/create-a-plugin.mdx"
+  - "Reference":
+      - "Other tools": "reference/other-tools.mdx"
+      - "Remark plugins": "reference/remark-plugins.md"

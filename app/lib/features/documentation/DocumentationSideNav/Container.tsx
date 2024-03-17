@@ -1,4 +1,4 @@
-import { css } from "@/styled-system/css";
+import { css } from "@/style/generated-styles/css";
 import React from "react";
 
 export const Container = ({ children }: { children: React.ReactNode }) => {

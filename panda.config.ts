@@ -1,7 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
-import { core } from "./design-tokens/core";
-import { semantic } from "./design-tokens/semantic";
-import { globalTextStyles, textStyles } from "./design-tokens/textStyles";
+import { core } from "./style/design-tokens/core";
+import { semantic } from "./style/design-tokens/semantic";
+import { textStyles } from "./style/global/textStyles";
+import { globalStyles } from "./style/global";
 
 export default defineConfig({
   // Whether to use css reset
@@ -21,10 +22,11 @@ export default defineConfig({
     semanticTokens: semantic,
     textStyles,
   },
+
   globalCss: {
-    ...globalTextStyles,
+    ...globalStyles,
   },
 
   // The output directory for your css system
-  outdir: "styled-system",
+  outdir: "style/generated-styles",
 });
