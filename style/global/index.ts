@@ -3,6 +3,7 @@ import { codeStyles } from "./code";
 import { tableStyles } from "./table";
 import { globalTextStyles } from "./textStyles";
 
+// @ts-ignore
 const styles: ExtendableGlobalStyleObject = {
   ...globalTextStyles,
   ...tableStyles,

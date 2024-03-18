@@ -41,7 +41,9 @@ These tokens don't say anything about where they should be used, and are thus ra
 
 Why alias tokens? Setting the text color to be `gray.500` every time means if we learn that `grey.500` does not have a high enough contrast ratio when used with our background colors we would have to change it in every place it is used.
 
-The color used for backgrounds is `#F5F5F5` or `layer.1.default`. If we want to change the background color, we would have to change it in every place it is used.
+The color used for text is `#0f172a` or `text.primary`. If we want to change the text color, we would have to change it in every place it is used.
+
+The second benefit of semantic tokens is using multiple mods. In our case this is light mode and dark mode. Again, for the text property, the color is `#0f172a` in light mode and `#f5f5f5` in dark mode. Using the `text.primary` token, we automatically point to the correct value based on the users current theme settings.
 
 This is the gray color <ColorPreview color="#CECECE">gray.500</ColorPreview> that is used for text.
 

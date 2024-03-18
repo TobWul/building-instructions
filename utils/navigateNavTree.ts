@@ -1,19 +1,3 @@
-/**
-nav:
-  - "Introduction": "index.mdx"
-  - "Getting Started":
-    - "Installation": "installation/index.mdx"
-    - "Configuration": "installation/configuration.mdx"
-  - "Components":
-    - "Overview": "components/index.mdx"
-    - "Design tokens": "components/design-tokens.md"
-    - "Button": "../../components/Button/README.md"
-    - "SectionTitle": "../../components/SectionTitle/README.md"
-  - "Reference":
-    - "Other tools": "reference/other-tools.mdx"
-    - "Remark plugins": "reference/remark-plugins.md"
- */
-
 import { NavTree } from "@/app/types/NavTree";
 
 export const navigateNavTree = (
@@ -25,6 +9,7 @@ export const navigateNavTree = (
     if (typeof value === "string") {
       visitor(title, value, 0);
     } else {
+      // @ts-ignore TODO: fix that it's sometimes an array and sometimes an object
       navigateNavTree(value, visitor);
     }
   }

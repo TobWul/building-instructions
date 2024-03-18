@@ -10,6 +10,7 @@ const parseMetadata = (lang: string, meta: string): Metadata => {
   const metadata = {
     lang: lang.split("-")[1],
   };
+  if (!meta) return metadata;
   meta.split(" ").map((item: string) => {
     const key = item.split("=")[0];
     const value = item.split("=")[1].replaceAll('"', "");
@@ -30,7 +31,7 @@ export const rehypeCodeBlock = (options: any) => {
         if (codeNode) {
           const metadata = parseMetadata(
             codeNode.properties.className[0],
-            codeNode.data.meta
+            codeNode.data?.meta
           );
 
           const newNode = {

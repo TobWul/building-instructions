@@ -14,7 +14,6 @@ type Props = {
 
 export const CodeBlock = ({ children, title, lang, highlightLines }: Props) => {
   const ref = useRef(null);
-  console.log(ref);
 
   return (
     <div

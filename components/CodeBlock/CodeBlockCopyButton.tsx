@@ -7,6 +7,7 @@ export const CodeBlockCopyButton = forwardRef(
     const copyToClipboard = () => {
       console.log(ref);
 
+      // @ts-ignore
       const text = ref?.current?.textContent;
       console.log("copying to clipboard", text);
 

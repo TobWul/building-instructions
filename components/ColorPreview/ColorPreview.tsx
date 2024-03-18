@@ -19,6 +19,7 @@ export const ColorPreview = ({ color, children }: Props) => {
           position: "relative",
           top: "2",
           borderRadius: "sm",
+          border: "primary",
         })}
       />
       {children}

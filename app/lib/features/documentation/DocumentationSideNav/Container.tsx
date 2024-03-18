@@ -5,13 +5,12 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <nav
       className={css({
-        borderRight: "default",
-        borderColor: "default",
+        borderRight: "primary",
         position: "fixed",
-        top: "navHeight",
+        top: "nav.height",
         left: "0",
         width: "[200px]",
-        maxHeight: "screen-h",
+        maxHeight: "screen.height",
         overflowY: "auto",
       })}
     >

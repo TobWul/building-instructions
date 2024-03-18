@@ -1,11 +1,6 @@
 import { NavTree } from "@/app/types/NavTree";
-import { slugify } from "@/utils";
-import { navigateNavTree } from "@/utils/navigateNavTree";
-import path from "path";
 import { visit } from "unist-util-visit";
 import { resolveMarkdownFileLink } from "./resolveMarkdownFileLink";
-
-const formatNonMarkdownLink = (node: any, docsSlug: string) => {};
 
 /**
  *

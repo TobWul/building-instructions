@@ -8,7 +8,7 @@ type Props = {
 
 export const Footer = ({}: Props) => {
   return (
-    <footer className={css({ zIndex: "9999" })}>
+    <footer>
       <ThemeToggle />
     </footer>
   );

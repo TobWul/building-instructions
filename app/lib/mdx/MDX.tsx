@@ -29,6 +29,7 @@ export const MDX = ({ source, navTree, fileLocation, docsSlug }: Props) => {
           ],
           rehypePlugins: [
             rehypeSanitize,
+            // @ts-ignore
             [rehypeHighlight, {}],
             rehypeCodeBlock,
             rehypeColorPreview,

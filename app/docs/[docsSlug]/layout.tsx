@@ -37,7 +37,7 @@ export default async function Layout({ params, children }: Props) {
         <article
           className={css({
             maxWidth: "screen.md",
-            margin: "0 auto",
+            mx: "auto",
           })}
         >
           {children}
