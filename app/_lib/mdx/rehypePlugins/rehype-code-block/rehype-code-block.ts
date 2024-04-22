@@ -8,7 +8,7 @@ type Metadata = {
 
 const parseMetadata = (lang: string, meta: string): Metadata => {
   const metadata = {
-    lang: lang.split("-")[1],
+    lang,
   };
   if (!meta) return metadata;
   meta.split(" ").map((item: string) => {
@@ -28,11 +28,16 @@ export const rehypeCodeBlock = (options: any) => {
           (child: any) => child.tagName === "code"
         );
 
+        const lang =
+          codeNode.properties?.className &&
+          codeNode.properties.className.length > 0
+            ? codeNode.properties.className[0].split("-")[1]
+            : undefined;
+
+        if (lang === "math") return;
+
         if (codeNode) {
-          const metadata = parseMetadata(
-            codeNode.properties.className[0],
-            codeNode.data?.meta
-          );
+          const metadata = parseMetadata(lang, codeNode.data?.meta);
 
           const newNode = {
             type: "element",

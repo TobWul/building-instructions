@@ -8,4 +8,5 @@ export * from "./Nav";
 export * from "./Page";
 export * from "./PageLink";
 export * from "./SectionTitle";
+export * from "./SelectText";
 export * from "./ThemeToggle";

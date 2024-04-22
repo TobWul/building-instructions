@@ -48,7 +48,7 @@ export const semantic: SemanticTokens = {
     border: {
       primary: {
         DEFAULT: {
-          value: { base: "{colors.gray.200}", _dark: "{colors.gray.700}" },
+          value: { base: "{colors.gray.200}", _dark: "{colors.gray.500}" },
         },
         hovered: {
           value: { base: "{colors.gray.300}", _dark: "{colors.gray.600}" },

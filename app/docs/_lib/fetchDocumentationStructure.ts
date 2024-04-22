@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-import { Response, NavTree } from "@/app/types";
+import { Response, NavTree } from "@/app/_types";
 import YAML from "yaml";
 
 export const fetchDocumentationStructure = async (

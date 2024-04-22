@@ -8,7 +8,7 @@ type Props = {
 
 export const Footer = ({}: Props) => {
   return (
-    <footer>
+    <footer className={css({ display: "flex", justifyContent: "flex-end" })}>
       <ThemeToggle />
     </footer>
   );

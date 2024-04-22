@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
-import { DocumentationPageItem } from "@/app/types/DocumentationPageItem";
+import React, { useContext } from "react";
+import { DocumentationPageItem } from "@/app/_types/DocumentationPageItem";
 import { css } from "@/style/generated-styles/css";
 import { usePathname } from "next/navigation";
 import { RecursiveNavTreeRenderer } from "./RecursiveNavTreeRenderer";
 import { useScrollNavToCurrentLink } from "./lib/useScrollNavToCurrentLink";
-import { NavTree } from "@/app/types/NavTree";
+import { NavTree } from "@/app/_types/NavTree";
+import { AIContext } from "../../ai/AIContext";
 
 type Props = {
   title: string;
@@ -15,6 +16,8 @@ type Props = {
 
 export const DocumentationSideNav = ({ title, navTree, docsSlug }: Props) => {
   const currentUrl = usePathname();
+
+  const { AIPanelOpen } = useContext(AIContext);
 
   useScrollNavToCurrentLink(currentUrl);
 
@@ -31,6 +34,10 @@ export const DocumentationSideNav = ({ title, navTree, docsSlug }: Props) => {
         overflowY: "auto",
         backgroundColor: "layer.2.default",
         zIndex: "nav",
+        transform: AIPanelOpen ? "translateX(-256px)" : "none",
+        transitionProperty: "transform",
+        transitionDuration: "normal",
+        transitionTimingFunction: "easeIn",
       })}
     >
       {/* "border-r fixed top-navHeight left-0 w-48 max-h-screen overflow-y-auto"> */}

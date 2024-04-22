@@ -2,7 +2,7 @@ import { docsPageUrl } from "./lib/docsPageUrl";
 import { NavItem } from "./NavItem";
 import { css } from "@/style/generated-styles/css";
 import { slugify } from "@/utils";
-import { NavTree } from "@/app/types/NavTree";
+import { NavTree } from "@/app/_types/NavTree";
 
 type Props = {
   navTree: NavTree;

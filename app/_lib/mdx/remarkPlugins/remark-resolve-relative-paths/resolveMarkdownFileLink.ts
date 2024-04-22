@@ -1,4 +1,4 @@
-import { NavTree } from "@/app/types";
+import { NavTree } from "@/app/_types";
 import { slugify } from "@/utils";
 import { navigateNavTree } from "@/utils/navigateNavTree";
 import path from "path";

@@ -17,7 +17,7 @@ const buttonStyle = cva({
         backgroundColor: "component.button.secondary.default",
         border: "component.button.secondary",
         _hover: {
-          backgroundColor: "component.button.secondary.hover",
+          backgroundColor: "component.button.secondary.default",
         },
       },
     },

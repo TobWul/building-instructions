@@ -1,11 +1,14 @@
 import {
+  DocumentationContainer,
   DocumentationSideNav,
   DocumentationTOC,
-} from "@/app/lib/features/documentation";
+} from "./[pageSlug]/_features/docs";
 import React from "react";
-import { fetchDocumentationStructure } from "../utils/fetchDocumentationStructure";
+import { fetchDocumentationStructure } from "../_lib/fetchDocumentationStructure";
 import { css } from "@/style/generated-styles/css";
 import { notFound } from "next/navigation";
+import { AIContextProvider } from "./[pageSlug]/_features/ai/AIContext";
+import { AIPanel } from "./[pageSlug]/_features/ai/AIPanel";
 
 type Props = {
   // Add your prop types here
@@ -27,13 +30,13 @@ export default async function Layout({ params, children }: Props) {
   const { title, navTree } = result.data;
 
   return (
-    <>
+    <AIContextProvider>
       <DocumentationSideNav
         title={title}
         navTree={navTree}
         docsSlug={params.docsSlug}
       />
-      <div className={css({ marginLeft: "256", paddingBottom: "64" })}>
+      <DocumentationContainer>
         <article
           className={css({
             maxWidth: "screen.md",
@@ -43,7 +46,8 @@ export default async function Layout({ params, children }: Props) {
           {children}
         </article>
         <DocumentationTOC />
-      </div>
-    </>
+      </DocumentationContainer>
+      <AIPanel />
+    </AIContextProvider>
   );
 }

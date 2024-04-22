@@ -1,4 +1,4 @@
-import { Response } from "@/app/types/Response";
+import { Response } from "@/app/_types/Response";
 import { fetchDocumentationStructure } from "./fetchDocumentationStructure";
 import { findMarkdownFileInNav } from "./findMarkdownFileInNav";
 
@@ -16,7 +16,6 @@ export const fetchDocumentationPage = async (
   if (!foundPage) {
     return { status: 404, data: null };
   }
-  console.log(foundPage);
 
   const mdxPath = path.join(
     `${process.env.NEXT_PUBLIC_DOCS_FOLDER}/${docsSlug}/${foundPage}`

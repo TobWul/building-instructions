@@ -1,12 +1,15 @@
 import { serialize } from "next-mdx-remote/serialize";
 
-import { MDX } from "@/app/lib/mdx";
-import { frontMatterParser } from "@/app/lib/mdx/frontMatterParser";
-import { fetchDocumentationPage } from "../../utils/fetchDocumentationPage";
+import { MDX } from "@/app/_lib/mdx";
+import { frontMatterParser } from "@/app/_lib/mdx/frontMatterParser";
+import { fetchDocumentationPage } from "../../_lib/fetchDocumentationPage";
 import { notFound } from "next/navigation";
-import { Content } from "@/components";
+import { Content, SelectText } from "@/components";
 import { css } from "@/style/generated-styles/css";
-import { fetchDocumentationStructure } from "../../utils/fetchDocumentationStructure";
+import { fetchDocumentationStructure } from "../../_lib/fetchDocumentationStructure";
+import Head from "next/head";
+import { AIContextProvider } from "@/app/docs/[docsSlug]/[pageSlug]/_features/ai/AIContext";
+import { DocumentationContainer } from "./_features/docs/DocumentationContainer/DocumentationContainer";
 
 export default async function Page({
   params,
@@ -31,16 +34,15 @@ export default async function Page({
 
   return (
     <>
-      <Content className={css({ "& > * + *": { marginTop: "[1em]" } })}>
-        <h1>{metadata.title}</h1>
-        <p>{metadata.owner}</p>
-        <MDX
-          source={page.data.source}
-          navTree={structure.data.navTree}
-          fileLocation={page.data.mdxPath}
-          docsSlug={params.docsSlug}
-        />
-      </Content>
+      <h1>{metadata.title}</h1>
+      <p>{metadata.owner}</p>
+      <MDX
+        source={page.data.source}
+        navTree={structure.data.navTree}
+        fileLocation={page.data.mdxPath}
+        docsSlug={params.docsSlug}
+      />
+      <SelectText />
     </>
   );
 }

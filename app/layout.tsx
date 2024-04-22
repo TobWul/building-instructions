@@ -3,9 +3,8 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Manrope } from "next/font/google";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer/Footer";
-import { ThemeProvider } from "./lib/providers/ThemeProvider";
+import { ThemeProvider } from "./_lib/providers/ThemeProvider";
 import { css } from "@/style/generated-styles/css";
-import Head from "next/head";
 
 const mono = JetBrains_Mono({
   weight: ["400"],

@@ -3,6 +3,8 @@ nav:
   - "Getting Started":
       - "Installation": "installation/index.mdx"
       - "Configuration": "installation/configuration.mdx"
+  - "Writing":
+    - "Math": "writing/math.md"
   - "Extending markdown":
       - "MDX components":
           - "Built-in components":
@@ -16,6 +18,8 @@ nav:
           - "Create a plugin":
               - "AST": "plugins/ast.mdx"
               - "Create plugin": "plugins/create-a-plugin.mdx"
+  - "Methods":
+    - "Survey": "methodology/survey.md"
   - "Reference":
       - "Other tools": "reference/other-tools.mdx"
       - "Remark plugins": "reference/remark-plugins.md"

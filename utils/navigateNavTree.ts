@@ -1,4 +1,4 @@
-import { NavTree } from "@/app/types/NavTree";
+import { NavTree } from "@/app/_types/NavTree";
 
 export const navigateNavTree = (
   navTree: NavTree,

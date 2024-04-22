@@ -100,4 +100,11 @@ export const globalTextStyles = {
   p: {
     textStyle: "body1",
   },
+  blockquote: {
+    textStyle: "body2",
+    borderLeft: "primary",
+    borderLeftWidth: "4",
+    borderColor: "text.primary",
+    paddingLeft: "16",
+  },
 };
